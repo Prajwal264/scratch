@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import logo from '@public/logo.png';
 import authBanner from '@public/auth-banner.jpg';
-import styles from '@styles/pages/register.module.scss';
+import styles from '@styles/pages/login.module.scss';
 import Link from 'next/link';
 
 /**
@@ -10,9 +10,9 @@ import Link from 'next/link';
  *
  * @return {*} 
  */
-function Register() {
+function Login() {
   return (
-    <div className={styles.register}>
+    <div className={styles.login}>
       <div className={styles.bgImageWrapper}>
         <Image className={styles.bgImage} src={authBanner} alt="auth-banner" />
       </div>
@@ -23,16 +23,10 @@ function Register() {
           </div>
           <div className={styles.contentContainer}>
             <h4 className={styles.heading}>
-              Start from Scratch
+              Welcome Back!
             </h4>
-            <p className={styles.subheading}>Create account to continue.</p>
+            <p className={styles.subheading}>Please login to continue.</p>
             <form>
-              <div className={styles.formGroup}>
-                <p className={styles.formLabel}>
-                  Full Name
-                </p>
-                <input type="text" name="name" id="name" />
-              </div>
               <div className={styles.formGroup}>
                 <p className={styles.formLabel}>
                   Email address
@@ -48,8 +42,8 @@ function Register() {
               <button type="submit">Sign Up</button>
             </form>
             <div className={styles.formFooter}>
-              <p>Already have an account?</p>
-              <Link href="/login/">Login Here</Link>
+              <p>New to Scratch?</p>
+              <Link href="/register/">Create Account Here</Link>
             </div>
           </div>
 
@@ -59,4 +53,4 @@ function Register() {
   )
 }
 
-export default Register;
+export default Login;
