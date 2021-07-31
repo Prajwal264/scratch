@@ -1,0 +1,20 @@
+/* breakpoints are set here */
+@mixin respond($breakpoint) {
+  @if $breakpoint==mobile {
+    @media screen and (max-width: 485px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media (min-width: 486px) and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==laptop {
+    @media (min-width: 769px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+}
