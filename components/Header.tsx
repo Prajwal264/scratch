@@ -5,6 +5,7 @@ import { FiMail } from 'react-icons/fi'
 import { RiNotification3Line } from 'react-icons/ri';
 import avatar from '@public/avatar.png';
 import styles from '@styles/components/Header.module.scss';
+import Link from 'next/link';
 
 /**
  *
@@ -22,8 +23,10 @@ function Header() {
         <div className={styles.options}>
           <RiNotification3Line />
           <FiMail />
-          <div className={styles.avatarWrapper} >
-            <Image className={styles.avatar} src={avatar} alt="avatar" />
+          <div className={styles.avatarWrapper}>
+            <Link href="/app/profile/">
+              <Image className={styles.avatar} src={avatar} alt="avatar" />
+            </Link>
           </div>
         </div>
       </div>

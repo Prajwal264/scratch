@@ -1,0 +1,17 @@
+@import '../_utils/mixins';
+@import '../_utils/variables';
+.profile {
+  main {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    margin: 50px auto;
+    .leftSection {
+      max-width: 304px;
+      width: 100%;
+    }
+    .mainContent {
+      margin: 0 0 0 20px;
+    }
+  }
+}
