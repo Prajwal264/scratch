@@ -18,7 +18,7 @@ function MyProfileCard() {
         <div className={styles.profileContent}>
           <p className={styles.name}>Nick Evans</p>
           <p className={styles.profileSlug}>Potato Master</p>
-          <p className={styles.profileInfo}><span>584 followers</span> <span>.</span> <span>23k likes</span></p>
+          <p className={styles.profileInfo}>584 followers • 23k likes</p>
         </div>
       </div>
       <div className={styles.profileAttributes}>

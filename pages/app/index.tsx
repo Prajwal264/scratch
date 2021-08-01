@@ -3,6 +3,8 @@ import styles from '@styles/pages/app.module.scss';
 import Header from '@components/Header';
 import MyProfileCard from '@components/home/MyProfileCard';
 import TopRecipiesCard from '@components/home/TopRecipiesCard';
+import Post from '@components/home/Post';
+import SiteNavigator from '@components/SiteNavigator';
 
 /**
  *
@@ -17,6 +19,13 @@ function index() {
         <div className={styles.leftSection}>
           <MyProfileCard />
           <TopRecipiesCard />
+        </div>
+        <div className={styles.mainContent}>
+          <Post />
+          <Post />
+        </div>
+        <div className={styles.rightSection}>
+          <SiteNavigator />
         </div>
       </main>
     </div>
