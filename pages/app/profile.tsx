@@ -3,6 +3,7 @@ import styles from '@styles/pages/profile.module.scss';
 import MyProfileCard from '@components/MyProfileCard';
 import Header from '@components/Header';
 import EditProfileCard from '@components/profile/EditProfileCard';
+import MyRecipiesView from '@components/profile/MyRecipiesView';
 
 /**
  *
@@ -19,6 +20,7 @@ function Profile() {
           <EditProfileCard />
         </div>
         <div className={styles.mainContent}>
+          <MyRecipiesView />
         </div>
       </main>
     </div>
