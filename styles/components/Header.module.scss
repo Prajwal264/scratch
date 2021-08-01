@@ -1,0 +1,39 @@
+@import '../_utils/variables';
+@import '../_utils/mixins';
+.header {
+  width: 100%;
+  background: $font-color-light; 
+  height: 80px;
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    .search {
+      border-bottom: 1px solid #a8a8a8;
+      max-width: 580px;
+      width: 100%;
+      padding: 8px;
+      input {
+        border: none;
+        width: 100%;
+      }
+    }
+    .options {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 24px;
+        cursor: pointer;
+      }
+      .avatarWrapper {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}

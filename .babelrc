@@ -6,14 +6,14 @@
       {
         "root": ["./"],
         "alias": {
-          "@components": "./src/components",
+          "@components": "./components",
           "@api": "./src/api",
           "@models": "./src/models",
           "@screens": "./src/screens",
           "@hooks": "./src/hooks",
           "@services": "./src/services",
           "@constants": "./src/constants",
-          "@context": "./src/context",
+          "@context": "./context",
           "@queries": "./src/queries",
           "@data": "./src/data",
           "@typeDefs": "./src/types",

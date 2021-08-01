@@ -46,7 +46,6 @@ function Login() {
               <Link href="/register/">Create Account Here</Link>
             </div>
           </div>
-
         </div>
       </div>
     </div>
