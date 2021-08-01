@@ -1,5 +1,14 @@
 @import '../_utils/mixins';
 @import '../_utils/variables';
 .app {
-  background: $primary-background-color;
+  main {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    margin: 50px auto;
+    .leftSection {
+      max-width: 304px;
+      width: 100%;
+    }
+  }
 }

@@ -29,7 +29,7 @@ html, html a {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
-body { background-color: #F1F1F4; }
+body { background-color: $primary-background-color; }
 
 body, button, input, optgroup, select, textarea {
     margin: 0;
