@@ -1,10 +1,10 @@
 {
   "presets": [
-    "next/babel", 
     "@babel/preset-env",
-    "@babel/preset-react"
+    "next/babel"
   ],
   "plugins": [
+    ["@babel/plugin-transform-runtime"],
     [
       "module-resolver",
       {
