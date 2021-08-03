@@ -1,14 +1,14 @@
-import React from 'react';
-import Image from 'next/image';
-import logo from '@public/logo.png';
-import authBanner from '@public/auth-banner.jpg';
-import styles from '@styles/pages/login.module.scss';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import logo from "@public/logo.png";
+import authBanner from "@public/auth-banner.jpg";
+import styles from "@styles/pages/login.module.scss";
+import Link from "next/link";
 
 /**
  *
  *
- * @return {*} 
+ * @return {*}
  */
 function Login() {
   return (
@@ -22,21 +22,15 @@ function Login() {
             <Image className={styles.logo} src={logo} alt="logo" />
           </div>
           <div className={styles.contentContainer}>
-            <h4 className={styles.heading}>
-              Welcome Back!
-            </h4>
+            <h4 className={styles.heading}>Welcome Back!</h4>
             <p className={styles.subheading}>Please login to continue.</p>
             <form>
               <div className={styles.formGroup}>
-                <p className={styles.formLabel}>
-                  Email address
-                </p>
+                <p className={styles.formLabel}>Email address</p>
                 <input type="text" name="email" id="email" />
               </div>
               <div className={styles.formGroup}>
-                <p className={styles.formLabel}>
-                  Password
-                </p>
+                <p className={styles.formLabel}>Password</p>
                 <input type="text" name="password" id="password" />
               </div>
               <button type="submit">Sign Up</button>
@@ -49,7 +43,7 @@ function Login() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Login;
