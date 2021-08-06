@@ -1,0 +1,168 @@
+@import "../_utils/variables";
+@import "../_utils/mixins";
+.recipie {
+  width: 100%;
+  display: flex;
+  .leftContent {
+    max-width:304px;
+    width: 100%;
+    margin-right: 20px;
+  }
+  .rightContent {
+    padding: 25px;
+    width: 100%;
+    .recipieHeaderSection {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e5e5e5;
+      h4 {
+        font-size: 24px;
+        font-weight: bold;
+        color: $font-color-dark;
+        max-width: 382px;
+      }
+      .recipieEditWrap {
+        display: flex;
+        align-items: center;
+        button:first-of-type {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.32px;
+          text-align: left;
+          color: $primary-color;
+          min-width: 170px;
+          width: max-content;
+          background-color: unset;
+          border: none;
+          svg {
+            margin-right: 8px;
+          }
+        }
+        button:nth-of-type(2) {
+          width: 100%;
+          height: 50px;
+          border-radius: 8px;
+          @include flex-center;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: bold;
+          transition: all 0.4s ease;
+          background-color: $primary-color;
+          color: $font-color-light;
+          border: none;
+          padding: 0 24px;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    .ingredientsWrapper {
+      margin-top: 20px;
+      margin-bottom: 70px;
+      h4 {
+        font-size: 16px;
+        font-weight: bold;
+        color: $font-color-dark;
+        margin-bottom: 24px;
+      }
+      .ingredientsList {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          display: flex;
+          align-items: center;
+          flex: 0 0 50%;
+          margin-bottom: 16px;
+          .image {
+            margin-right: 16px;
+            & > div {
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+              border-radius: 50%;
+              margin-right: 16px;
+            }
+          }
+          p {
+            font-size: 14px;
+            color: $font-color-dark;
+          }
+        }
+      }
+    }
+    .howToCookSection {
+      margin-bottom: 45px;
+      h4 {
+        font-size: 16px;
+        font-weight: bold;
+        color: $font-color-dark;
+        margin-bottom: 30px;
+      }
+      ol {
+        li {
+          display: flex;
+          margin-bottom: 24px;
+          span {
+            width: 20px;
+            height: 20px;
+            padding: 4px 6px;
+            border: solid 1px $primary-color;
+            background-color: #fff;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            text-align: center;
+            color: $primary-color;
+            margin-right: 24px;
+            border-radius: 50%;
+            @include flex-center();
+          }
+          p {
+            font-family: Nunito;
+            font-size: 14px;
+            line-height: 1.57;
+            letter-spacing: normal;
+            text-align: left;
+            color: $font-color-dark;
+          }
+        }
+      }
+    }
+    .additionalInformationSection {
+      h4 {
+        font-size: 16px;
+        font-weight: bold;
+        color: $font-color-dark;
+        margin-bottom: 30px;
+      }
+      .additionalInformationList {
+        display: flex;
+        flex-wrap: wrap;
+        .additionalInformationItem {
+          display: flex;
+          flex: 0 0 50%;
+          margin-bottom: 8px;
+          p {
+            font-size: 14px;
+            color: #a8a8a8;
+            min-width: 120px;
+          }
+          h6 {
+            font-size: 14px;
+            color: $font-color-dark;
+            max-width: 153px;
+            line-height: 1.57;
+          }
+        }
+      }
+    }
+  }
+}
