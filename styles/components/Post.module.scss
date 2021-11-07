@@ -1,0 +1,91 @@
+
+@import "../_utils/variables/"; 
+@import "../_utils/mixins/";
+.post {
+  box-shadow: $base-box-shadow;
+  background-color: $font-color-light;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  .authorInfoSection {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    .authorProfilePicture {
+      width: 32px;
+      height: 32px;
+      margin: 0 10px 0 0;
+    }
+    .authorProfileContent {  
+      .authorName {
+        font-size: 12px;
+        color: $font-color-dark;
+      }
+      .postTiming {
+        font-size: 12px;
+        letter-spacing: 0.4px;
+        color: #767676;
+      }
+    }
+  }
+  .postBgImage {
+    width: 100%;
+    & > div {
+      width: 100%;
+      max-height: 176px;
+      img {
+        object-fit: cover;
+        
+      }
+    }
+  }
+  .postContent {
+    padding: 16px 30px;
+    .postNameWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .postName {
+        font-size: 18px;
+        font-weight: 600;
+        color: $font-color-dark;
+        margin-bottom: 10px;
+      }
+      svg {
+        cursor: pointer;
+      }
+    }
+    .postDescription {
+      font-size: 14px;
+      line-height: 1.57;
+      color: #a8a8a8;
+    }
+    .postActionSection {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      .postCredits {
+        font-size: 14px;
+        color: $muted-font-color;
+      }
+      .savePost {
+        padding: 8px 12px;
+        border-radius: 4px;
+        border: solid 1px $primary-color;
+        background-color: $font-color-light;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        text-align: left;
+        color: $primary-color;
+        @include flex-center;
+        width: max-content;
+        transition: all 0.4s ease;
+        &:hover {
+          background-color: $primary-color;
+          color: $font-color-light;
+        }
+      }
+    }
+  }
+}

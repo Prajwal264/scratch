@@ -1,0 +1,85 @@
+@import "../_utils/variables/"; 
+@import "../_utils/mixins/";
+.myRecipiesView {
+  .headingWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1;
+      color: $font-color-dark;
+    }
+    button {
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: solid 2px $primary-color;
+      background-color: $font-color-light;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      text-align: left;
+      color: $primary-color;
+      @include flex-center;
+      width: max-content;
+      transition: all 0.4s ease;
+      &:hover {
+        background-color: $primary-color;
+        color: $font-color-light;
+        box-shadow: 0 6px 20px 0 rgba(13, 51, 32, 0.1);
+      }
+    }
+  }
+  .collectionContainer {
+    margin-top: 40px;
+    display: -webkit-box;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .collection {
+      max-width: 155px;
+      width: 100%;
+      margin-right: 16px;
+      opacity: 0.4;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      background-color: $font-color-light;
+      border-radius: 8px;
+      overflow: hidden;
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        opacity: 1;
+        box-shadow: 0 6px 20px 0 rgba(13, 51, 32, 0.1);
+        border: solid 2px $primary-color;
+      }
+      .image {
+        width: 100%;
+        &:hover {
+          height: 105px;
+        }
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding : 6px 0px;
+        p {
+          font-size: 16px;
+          color: $font-color-dark;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .recipieList {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
