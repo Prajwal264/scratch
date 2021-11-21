@@ -1,7 +1,6 @@
 @import "../_utils/variables";
 @import "../_utils/mixins";
 .savePostPopup {
-
 }
 
 :global {
@@ -12,7 +11,7 @@
     .ant-modal-content {
       border-radius: 8px;
       .ant-modal-header {
-        padding: 50px  50px 28px;
+        padding: 50px 50px 28px;
         .ant-modal-title {
           font-size: 24px;
           font-weight: bold;
