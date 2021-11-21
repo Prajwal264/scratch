@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@public/logo.png";
 import authBanner from "@public/auth-banner.jpg";
@@ -6,6 +6,9 @@ import styles from "@styles/pages/register.module.scss";
 import Link from "next/link";
 import { useRegisterMutation } from "apollo/generated/graphql";
 import { useRouter } from "next/dist/client/router";
+import toast from "react-hot-toast";
+import isValidEmail from "@services/auth.service";
+import { getPathToNavigate, PAGE_KIND } from "@services/navigation.service";
 
 const defaultFormData = {
   username: "",
@@ -20,6 +23,7 @@ const defaultFormData = {
  */
 const Register: React.FC = () => {
   const [registerMutation] = useRegisterMutation();
+  const [disabled, setDisabled] = useState(true);
   const router = useRouter();
   const [formData, setFormData] = useState(defaultFormData);
 
@@ -43,15 +47,43 @@ const Register: React.FC = () => {
    */
   const register: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    const registerResponse = await registerMutation({
+    const {
+      data: { register: registerResponse },
+    } = await registerMutation({
       variables: formData,
     });
     if (registerResponse.errors?.length) {
-      console.log(registerResponse);
+      const error = registerResponse.errors[0];
+      toast.error(error.message);
       return;
     }
-    router.push("/login/");
+    toast.success("Registration Successful");
+    const route = getPathToNavigate(PAGE_KIND.LOGIN);
+    router.push(route);
   };
+
+  useEffect(() => {
+    const checkFormValidity = (): boolean => {
+      let isValid = true;
+      Object.keys(formData).forEach((key) => {
+        if (key === "email") {
+          if (!isValidEmail(formData[key])) {
+            isValid = false;
+          }
+        }
+        if (!formData[key]) {
+          isValid = false;
+        }
+      });
+      return isValid;
+    };
+
+    if (checkFormValidity()) {
+      setDisabled(false);
+      return;
+    }
+    setDisabled(true);
+  }, [formData]);
   return (
     <div className={styles.register}>
       <div className={styles.bgImageWrapper}>
@@ -93,7 +125,9 @@ const Register: React.FC = () => {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit">Sign Up</button>
+              <button type="submit" disabled={disabled}>
+                Sign Up
+              </button>
             </form>
             <div className={styles.formFooter}>
               <p>Already have an account?</p>
