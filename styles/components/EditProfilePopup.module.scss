@@ -1,0 +1,95 @@
+@import "../_utils/variables";
+@import "../_utils/mixins";
+.editProfile {
+}
+
+:global {
+  .ant-modal {
+    width: 631px !important;
+    border-radius: 8px;
+    overflow: hidden;
+    .ant-modal-content {
+      border-radius: 8px;
+      .ant-modal-header {
+        padding: 50px 50px 28px;
+        border-bottom: unset;
+        .ant-modal-title {
+          font-size: 24px;
+          font-weight: bold;
+          color: $font-color-dark;
+        }
+      }
+      .ant-modal-body {
+        padding: 0 50px;
+        border-bottom: unset;
+      }
+      .ant-modal-footer {
+        border-top: unset;
+        padding: 16px 50px 50px 50px;
+      }
+    }
+  }
+}
+
+.editProfileContentWrapper {
+  .formRow {
+    display: flex;
+    margin-bottom: 24px;
+
+    .imageDropzone {
+      max-width: 62px;
+      height: 62px;
+      @include flex-center;
+      border-radius: 8px;
+      margin-right: 16px;
+      border: dotted 1px #979797;
+      img {
+        width: 100%;
+      }
+    }
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      label {
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.3;
+        letter-spacing: normal;
+        text-align: left;
+        color: #a8a8a8;
+        display: block;
+        width: 100%;
+        input {
+          display: block;
+          font-size: 16px;
+          line-height: 1.38;
+          letter-spacing: normal;
+          text-align: left;
+          color: $font-color-dark;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+        }
+      }
+      h5 {
+        font-size: 16px;
+        font-weight: bold;
+        color: $font-color-dark;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 15px 15px 9px 15px;
+        border-radius: 8px;
+        border: dotted 1px #979797;
+        font-size: 16px;
+        text-align: left;
+        color: #030f0980;
+        background-color: white;
+      }
+    }
+  }
+}

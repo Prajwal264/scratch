@@ -10,21 +10,26 @@
     margin-bottom: -26px;
     li {
       margin-bottom: 26px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      svg {
-        margin-right: 16px;
-      }
-      p {
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.38;
-        letter-spacing: normal;
-        text-align: left;
-        color: $font-color-dark;
+      button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: unset;
+        border: unset;
+        width: 100%;
+        svg {
+          margin-right: 16px;
+        }
+        p {
+          font-size: 16px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.38;
+          letter-spacing: normal;
+          text-align: left;
+          color: $font-color-dark;
+        }
       }
     }
   }
