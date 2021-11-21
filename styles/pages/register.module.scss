@@ -28,15 +28,24 @@
     @include flex-center;
     height: 100%;
     min-height: 100vh;
+    @include respond(mobile) {
+      align-items: unset;
+    }
     .authContainer {
       max-width: 910px;
       width: 100%;
       display: flex;
       z-index: 1;
       border-radius: 8px;
+      @include respond(mobile) {
+        flex-direction: column;
+      }
       .logoContainer { 
         @include flex-center;
         flex: 0.5;
+        @include respond(mobile) {
+          flex: 0.1;
+        }
         background-image: linear-gradient(to top, rgba(255, 255, 255, 0.44), #ffffff);
         .logo{
         }
@@ -44,6 +53,9 @@
       .contentContainer {
         padding: 60px;
         flex: 0.5;
+        @include respond(mobile) {
+          flex: 0.9;
+        }
         .heading {
           font-size: 24px;
           font-weight: bold;

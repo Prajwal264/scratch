@@ -81,5 +81,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include respond(mobile) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
   }
 }
