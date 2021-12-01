@@ -1,8 +1,8 @@
-@import '../_utils/variables';
-@import '../_utils/mixins';
+@import "../_utils/variables";
+@import "../_utils/mixins";
 .header {
   width: 100%;
-  background: $font-color-light; 
+  background: $font-color-light;
   height: 80px;
   box-shadow: $base-box-shadow;
   .container {

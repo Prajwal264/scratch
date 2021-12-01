@@ -1,5 +1,4 @@
-
-@import "../_utils/variables/"; 
+@import "../_utils/variables/";
 @import "../_utils/mixins/";
 .recipie {
   flex: 0 0 48%;
@@ -7,6 +6,9 @@
   background-color: $font-color-light;
   box-shadow: $base-box-shadow;
   margin-bottom: 24px;
+  @include respond(mobile) {
+    flex: 1;
+  }
   .image {
     & > div {
       height: 220px;

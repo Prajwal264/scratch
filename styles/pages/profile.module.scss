@@ -1,18 +1,29 @@
-@import '../_utils/mixins';
-@import '../_utils/variables';
+@import "../_utils/mixins";
+@import "../_utils/variables";
 .profile {
   main {
     max-width: 1280px;
     width: 100%;
     display: flex;
     margin: 50px auto;
+    @include respond(mobile) {
+      flex-direction: column;
+      padding: 16px;
+    }
     .leftSection {
       max-width: 304px;
       width: 100%;
+      @include respond(mobile) {
+        max-width: unset;
+        margin-bottom: 24px;
+      }
     }
     .mainContent {
       margin: 0 0 0 50px;
       width: 100%;
+      @include respond(mobile) {
+        margin: 0;
+      }
     }
   }
 }

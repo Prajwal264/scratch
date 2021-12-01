@@ -1,4 +1,4 @@
-@import "../_utils/variables/"; 
+@import "../_utils/variables/";
 @import "../_utils/mixins/";
 .myRecipiesView {
   .headingWrapper {
@@ -67,7 +67,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding : 6px 0px;
+        padding: 6px 0px;
         p {
           font-size: 16px;
           color: $font-color-dark;
@@ -81,5 +81,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include respond(mobile) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
   }
 }

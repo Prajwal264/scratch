@@ -1,5 +1,4 @@
-
-@import "../_utils/variables/"; 
+@import "../_utils/variables/";
 @import "../_utils/mixins/";
 .post {
   box-shadow: $base-box-shadow;
@@ -15,7 +14,7 @@
       height: 32px;
       margin: 0 10px 0 0;
     }
-    .authorProfileContent {  
+    .authorProfileContent {
       .authorName {
         font-size: 12px;
         color: $font-color-dark;
@@ -34,7 +33,6 @@
       max-height: 176px;
       img {
         object-fit: cover;
-        
       }
     }
   }
