@@ -7,6 +7,11 @@ import avatar from "@public/avatar.png";
 import styles from "@styles/components/Header.module.scss";
 import Link from "next/link";
 
+const ImageComponent = () => (
+  <Image className={styles.avatar} src={avatar} alt="avatar" />
+);
+const ImageRef = React.forwardRef(ImageComponent);
+
 /**
  *
  *
@@ -28,7 +33,7 @@ const Header: React.FC = () => (
         <FiMail />
         <div className={styles.avatarWrapper}>
           <Link href="/app/profile/">
-            <Image className={styles.avatar} src={avatar} alt="avatar" />
+            <ImageRef />
           </Link>
         </div>
       </div>
