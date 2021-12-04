@@ -1,0 +1,23 @@
+query GetUser($id: String!) {
+  user(id: $id){
+    user {
+      username
+      bio
+    }
+  }
+}
+
+scalar Upload
+
+mutation EditProfile($username: String, $bio: String, $profileImage: Upload) {
+  editProfile(username: $username, bio: $bio, profileImage: $profileImage) {
+    errors {
+      message
+    }
+    user {
+      username
+      bio
+      profileImage
+    }
+  }
+}
