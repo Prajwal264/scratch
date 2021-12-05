@@ -53,6 +53,8 @@ const EditProfilePopup: React.FC<Props> = ({ showModal, closeModal }) => {
       variables: editableField,
     });
     console.log(data);
+    // TODO: update store
+    closeModal();
   };
 
   useEffect(

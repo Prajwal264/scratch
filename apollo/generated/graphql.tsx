@@ -58,6 +58,7 @@ export type LoginResponse = {
 export type Mutation = {
   __typename?: "Mutation";
   editProfile: UserResponse;
+  generateAccessToken: GenerateAccessTokenReponse;
   login: LoginResponse;
   register: UserResponse;
 };
@@ -66,6 +67,10 @@ export type MutationEditProfileArgs = {
   bio?: InputMaybe<Scalars["String"]>;
   profileImage?: InputMaybe<Scalars["Upload"]>;
   username?: InputMaybe<Scalars["String"]>;
+};
+
+export type MutationGenerateAccessTokenArgs = {
+  refreshToken: Scalars["String"];
 };
 
 export type MutationLoginArgs = {
@@ -167,6 +172,18 @@ export type LoginMutation = {
         }>
       | null
       | undefined;
+  };
+};
+
+export type GenerateNewAccessTokenMutationVariables = Exact<{
+  refreshToken: Scalars["String"];
+}>;
+
+export type GenerateNewAccessTokenMutation = {
+  __typename?: "Mutation";
+  generateAccessToken: {
+    __typename?: "GenerateAccessTokenReponse";
+    accessToken: string;
   };
 };
 
@@ -326,6 +343,56 @@ export type LoginMutationResult = Apollo.MutationResult<LoginMutation>;
 export type LoginMutationOptions = Apollo.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
+>;
+export const GenerateNewAccessTokenDocument = gql`
+  mutation GenerateNewAccessToken($refreshToken: String!) {
+    generateAccessToken(refreshToken: $refreshToken) {
+      accessToken
+    }
+  }
+`;
+export type GenerateNewAccessTokenMutationFn = Apollo.MutationFunction<
+  GenerateNewAccessTokenMutation,
+  GenerateNewAccessTokenMutationVariables
+>;
+
+/**
+ * __useGenerateNewAccessTokenMutation__
+ *
+ * To run a mutation, you first call `useGenerateNewAccessTokenMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useGenerateNewAccessTokenMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [generateNewAccessTokenMutation, { data, loading, error }] = useGenerateNewAccessTokenMutation({
+ *   variables: {
+ *      refreshToken: // value for 'refreshToken'
+ *   },
+ * });
+ */
+export function useGenerateNewAccessTokenMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    GenerateNewAccessTokenMutation,
+    GenerateNewAccessTokenMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    GenerateNewAccessTokenMutation,
+    GenerateNewAccessTokenMutationVariables
+  >(GenerateNewAccessTokenDocument, options);
+}
+export type GenerateNewAccessTokenMutationHookResult = ReturnType<
+  typeof useGenerateNewAccessTokenMutation
+>;
+export type GenerateNewAccessTokenMutationResult =
+  Apollo.MutationResult<GenerateNewAccessTokenMutation>;
+export type GenerateNewAccessTokenMutationOptions = Apollo.BaseMutationOptions<
+  GenerateNewAccessTokenMutation,
+  GenerateNewAccessTokenMutationVariables
 >;
 export const GetUserDocument = gql`
   query GetUser($id: String!) {
