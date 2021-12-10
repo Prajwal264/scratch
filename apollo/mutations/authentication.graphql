@@ -24,3 +24,9 @@ mutation Login($email: String!, $password: String!) {
     }
   }
 }
+
+mutation GenerateNewAccessToken($refreshToken: String!) {
+  generateAccessToken(refreshToken: $refreshToken) {
+    accessToken
+  }
+}

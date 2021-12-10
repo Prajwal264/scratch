@@ -9,6 +9,8 @@ import { getPathToNavigate, PAGE_KIND } from "@services/navigation.service";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
 import isValidEmail from "@services/auth.service";
+import cookie from "react-cookies";
+import { Cookies } from "apollo/types/cookie.types";
 
 const defaultFormData = {
   email: "",
@@ -50,6 +52,9 @@ const Login: React.FC = () => {
       toast.error(error.message);
       return;
     }
+    const { accessToken, refreshToken } = loginResponse.user;
+    cookie.save(Cookies.ACCESSTOKEN, accessToken, { path: "" });
+    cookie.save(Cookies.REFRESHTOKEN, refreshToken, { path: "" });
     toast.success("Login Successful");
     const route = getPathToNavigate(PAGE_KIND.DASHBOARD);
     router.push(route);
