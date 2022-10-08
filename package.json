@@ -22,7 +22,8 @@
   "scripts": {
     "dev": "next dev",
     "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider' npm run dev",
-    "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "build:mac": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
     "serve": "next start",
     "lint": "next lint",
     "codegen": "graphql-codegen --config codegen.yml"
