@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-param-reassign */
 const path = require("path");
 
 module.exports = {
@@ -13,7 +15,7 @@ module.exports = {
     );
 
     const fixUse = (use) => {
-      if (use.loader.indexOf("css-loader") >= 0 && use.options.modules) {
+      if (use.loader?.indexOf("css-loader") >= 0 && use.options.modules) {
         use.options.modules.mode = "local";
       }
     };
