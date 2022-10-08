@@ -18,8 +18,10 @@ const authLink = new ApolloLink((operation, forward) => {
   return forward(operation);
 });
 
+const { NEXT_PUBLIC_BASE_API_URL } = process.env;
+
 const uploadLink = createUploadLink({
-  uri: "http://localhost:4000/graphql",
+  uri: `${NEXT_PUBLIC_BASE_API_URL}/graphql`,
   // credentials: "include",
 }) as unknown as ApolloLink; // workaround for https://github.com/DefinitelyTyped/DefinitelyTyped/pull/46785
 

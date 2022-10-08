@@ -52,7 +52,6 @@ const EditProfilePopup: React.FC<Props> = ({ showModal, closeModal }) => {
     const data = await editProfileMutation({
       variables: editableField,
     });
-    console.log(data);
     // TODO: update store
     closeModal();
   };
