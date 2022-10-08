@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider' npm run dev",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && next build",
     "build:mac": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
     "serve": "next start",
     "lint": "next lint",
